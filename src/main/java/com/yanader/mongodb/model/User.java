@@ -16,7 +16,7 @@ public class User {
     private ObjectId id;
     private String username;
     private String email;
-    private List<League> leagueMemberships;
+    private List<ObjectId> leagueMemberships;
 
     public User(String username, String email) {
         this.username = username;
