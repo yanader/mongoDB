@@ -2,6 +2,8 @@ package com.yanader.mongodb.model;
 
 import lombok.Data;
 import org.bson.types.ObjectId;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,4 +17,12 @@ public class User {
     private String username;
     private String email;
     private List<League> leagueMemberships;
+
+    public User(String username, String email) {
+        this.username = username;
+        this.email = email;
+        leagueMemberships = new ArrayList<>();
+    }
+
+
 }
