@@ -31,13 +31,13 @@ class LeagueServiceImplTest {
 
     @Test
     void getLeagueByName() {
-        when(mockRepository.findByName("Test League")).thenReturn(league);
+        when(mockRepository.findByLeagueName("Test League")).thenReturn(league);
 
         League returnedLeague = leagueService.getLeagueByName("Test League");
 
         assertEquals("Test League", returnedLeague.getLeagueName());
         assertEquals(0, returnedLeague.getLeagueMembers().size());
-        verify(mockRepository, times(1)).findByName("Test League");
+        verify(mockRepository, times(1)).findByLeagueName("Test League");
 
     }
 }

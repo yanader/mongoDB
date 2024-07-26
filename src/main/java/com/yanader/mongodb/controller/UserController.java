@@ -21,6 +21,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<User>> userControllerTest() {
         List<User> users = userService.getAllUsers();
+        System.out.println("YES THIS DID THIS");
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 }
