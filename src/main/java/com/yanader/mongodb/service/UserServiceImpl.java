@@ -13,7 +13,23 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getAllUsers() {
+    @Override
+    public List<User> getUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public User addUser(User user) {
+        return null;
+    }
+
+    @Override
+    public User deleteUser(int id) {
+        return null;
+    }
+
+    @Override
+    public User updateUser(int id, User user) {
+        return null;
     }
 }

@@ -12,32 +12,32 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    private ProductRepository productRepo;
+    private ProductRepository productRepository;
 
     @Override
     public List<Product> getProducts() {
-        return productRepo.findAll();
+        return productRepository.findAll();
     }
 
     @Override
     public Product addProduct(Product product) {
-        return productRepo.save(product);
+        return productRepository.save(product);
     }
 
     @Override
     public Product deleteProduct(int id) {
-        Optional<Product> p = productRepo.findById(id);
-        productRepo.deleteById(id);
+        Optional<Product> p = productRepository.findById(id);
+        productRepository.deleteById(id);
         return p.orElse(null);
     }
 
     @Override
     public Product updateProduct(int id, Product product) {
-        Product productToUpdate =  productRepo.findById(id).get();
+        Product productToUpdate =  productRepository.findById(id).get();
         productToUpdate.setName(product.getName());
         productToUpdate.setPrice(product.getPrice());
         productToUpdate.setQuantity(product.getQuantity());
-        productRepo.save(productToUpdate);
+        productRepository.save(productToUpdate);
         return productToUpdate;
 
     }
