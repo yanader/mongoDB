@@ -34,7 +34,7 @@ public class LeagueController {
         return leagueService.deleteLeague(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{name}")
     public League getLeagueByName(@PathVariable String name) {
         return leagueService.getLeagueByName(name);
     }
