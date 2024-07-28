@@ -3,11 +3,7 @@ package com.yanader.mongodb.controller;
 import com.yanader.mongodb.model.User;
 import com.yanader.mongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,15 +15,22 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<User>> userControllerTest() {
-        List<User> users = userService.getAllUsers();
-        System.out.println(users.size());
-        System.out.println("YES THIS DID THIS");
-        return new ResponseEntity<>(users, HttpStatus.OK);
+    public List<User> getUsers() {
+        return userService.getUsers();
     }
 
-    @GetMapping("/test")
-    public String testEndPoint() {
-        return "Yeah you've hit this then.";
+    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return userService.addUser(user);
+    }
+
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable int id, @RequestBody User user) {
+        return userService.updateUser(id, user);
+    }
+
+    @DeleteMapping("/{id}")
+    public User deleteUser(@PathVariable int id) {
+        return userService.deleteUser(id);
     }
 }
