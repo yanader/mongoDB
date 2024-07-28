@@ -17,7 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
     @Id
-    private Integer id;
+    private Integer _id;
     private String username;
     private String email;
     private List<Integer> leagueMemberships;

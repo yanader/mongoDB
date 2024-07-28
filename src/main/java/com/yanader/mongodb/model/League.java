@@ -14,9 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class League {
 
     @Id
-    private ObjectId id;
+    private Integer _id;
     private String leagueName;
-    private List<ObjectId> leagueMembers;
+    private List<Integer> leagueMembers;
 
     public League(String leagueName) {
         this.leagueName = leagueName;
