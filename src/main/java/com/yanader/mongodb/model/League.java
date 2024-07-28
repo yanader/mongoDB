@@ -1,14 +1,16 @@
 package com.yanader.mongodb.model;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bson.types.ObjectId;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Document(collection = "leagues")
 public class League {
