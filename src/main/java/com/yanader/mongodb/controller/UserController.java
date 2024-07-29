@@ -3,7 +3,10 @@ package com.yanader.mongodb.controller;
 import com.yanader.mongodb.model.User;
 import com.yanader.mongodb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -15,22 +18,37 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<User> getUsers() {
-        return userService.getUsers();
+    public ResponseEntity<List<User>> getUsers() {
+        return new ResponseEntity<>(userService.getUsers(), HttpStatus.OK);
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        User addedUser = userService.addUser(user);
+        if (addedUser != null) {
+            return new ResponseEntity<>(addedUser, HttpStatus.CREATED);
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User creation failed");
+        }
     }
 
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable int id, @RequestBody User user) {
-        return userService.updateUser(id, user);
+    public ResponseEntity<User> updateUser(@PathVariable int id, @RequestBody User user) {
+        User updatedUser = userService.updateUser(id, user);
+        if (updatedUser != null) {
+            return new ResponseEntity<>(updatedUser, HttpStatus.ACCEPTED);
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User update failed");
+        }
     }
 
     @DeleteMapping("/{id}")
-    public User deleteUser(@PathVariable int id) {
-        return userService.deleteUser(id);
+    public ResponseEntity<User> deleteUser(@PathVariable int id) {
+        User deletedUser = userService.deleteUser(id);
+        if (deletedUser != null) {
+            return new ResponseEntity<>(deletedUser, HttpStatus.ACCEPTED);
+        } else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User deletion failed");
+        }
     }
 }
