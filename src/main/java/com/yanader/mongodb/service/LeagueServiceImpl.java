@@ -27,6 +27,7 @@ public class LeagueServiceImpl implements LeagueService{
 
     @Override
     public League addLeague(League league) {
+        if(!validLeague(league)) return null;
         return leagueRepository.save(league);
     }
 
@@ -43,5 +44,9 @@ public class LeagueServiceImpl implements LeagueService{
         leagueToUpdate.setLeagueName(league.getLeagueName());
         leagueRepository.save(leagueToUpdate);
         return leagueToUpdate;
+    }
+
+    private boolean validLeague(League league) {
+        return league.getLeagueName() != null;
     }
 }
