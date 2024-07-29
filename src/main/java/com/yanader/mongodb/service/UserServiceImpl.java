@@ -21,14 +21,19 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User addUser(User user) {
+        if(!validUser(user)) return null;
         return userRepository.save(user);
     }
 
     @Override
     public User deleteUser(int id) {
         Optional<User> user = userRepository.findById(id);
-        userRepository.deleteById(id);
-        return user.orElse(null);
+        if(user.isPresent()) {
+            userRepository.deleteById(id);
+            return user.get();
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -39,4 +44,10 @@ public class UserServiceImpl implements UserService{
         userRepository.save(userToUpdate);
         return userToUpdate;
     }
+
+    private boolean validUser(User user) {
+        return user.getUsername() != null && user.getEmail() != null;
+    }
+
+
 }
