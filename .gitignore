@@ -35,3 +35,6 @@ build/
 ### Auth/Config ###
 *.properties
 src/main/resources/*.properties
+
+### TODO ###
+TODO.txt
