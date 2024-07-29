@@ -34,19 +34,31 @@ public class LeagueServiceImpl implements LeagueService{
     @Override
     public League deleteLeague(int id) {
         Optional<League> league = leagueRepository.findById(id);
-        leagueRepository.deleteById(id);
-        return league.orElse(null);
+        if(league.isPresent()) {
+            leagueRepository.deleteById(id);
+            return league.get();
+        } else {
+            return null;
+        }
     }
 
     @Override
-    public League updateLeague(int id, League league) {
-        League leagueToUpdate = leagueRepository.findById(id).get();
-        leagueToUpdate.setLeagueName(league.getLeagueName());
+    public League updateLeague(int id, League updates) {
+        Optional<League> optionalLeague = leagueRepository.findById(id);
+        if(optionalLeague.isEmpty()) {
+            return null;
+        }
+        League leagueToUpdate = optionalLeague.get();
+        applyLeagueUpdates(leagueToUpdate, updates);
         leagueRepository.save(leagueToUpdate);
         return leagueToUpdate;
     }
 
     private boolean validLeague(League league) {
         return league.getLeagueName() != null;
+    }
+
+    private void applyLeagueUpdates(League leagueToUpdate, League updates) {
+
     }
 }
