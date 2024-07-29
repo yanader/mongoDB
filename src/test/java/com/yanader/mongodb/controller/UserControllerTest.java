@@ -19,7 +19,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -52,7 +51,7 @@ class UserControllerTest {
 
     @Test
     void getAllUsers() throws Exception {
-        when(mockService.getAllUsers()).thenReturn(users);
+        when(mockService.getUsers()).thenReturn(users);
 
         this.mockMvcController.perform(
                 MockMvcRequestBuilders.get("/api/v1/photoleague/users"))
@@ -62,6 +61,6 @@ class UserControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].email").value("ste@email.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].email").value("graton@email.com"));
 
-        verify(mockService, times(1)).getAllUsers();
+        verify(mockService, times(1)).getUsers();
     }
 }
