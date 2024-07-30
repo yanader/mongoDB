@@ -11,7 +11,7 @@
 	<groupId>com.yanader</groupId>
 	<artifactId>photoleague</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>mongodb</name>
+	<name>photoleague</name>
 	<description>Demo MongoDB project with Spring</description>
 	<url/>
 	<licenses>
