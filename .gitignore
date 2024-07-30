@@ -38,3 +38,6 @@ src/main/resources/*.properties
 
 ### TODO ###
 TODO.txt
+
+### Apple ###
+.DS_Store
