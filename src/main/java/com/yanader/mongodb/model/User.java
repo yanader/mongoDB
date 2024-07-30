@@ -16,7 +16,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
     @Id
-    private Integer _id;
+    // @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String _id;
     private String username;
     private String email;
     private List<Integer> leagueMemberships;
@@ -26,6 +27,5 @@ public class User {
         this.email = email;
         leagueMemberships = new ArrayList<>();
     }
-
 
 }

@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User deleteUser(int id) {
+    public User deleteUser(String id) {
         Optional<User> user = userRepository.findById(id);
         if(user.isPresent()) {
             userRepository.deleteById(id);
@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User updateUser(int id, User updates) {
+    public User updateUser(String id, User updates) {
         Optional<User> optionalUser = userRepository.findById(id);
         if (optionalUser.isEmpty()) {
             return null;

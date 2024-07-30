@@ -34,7 +34,7 @@ public class LeagueController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<League> updateLeague(@PathVariable int id, @RequestBody League league) {
+    public ResponseEntity<League> updateLeague(@PathVariable String id, @RequestBody League league) {
         League updatedLeague = leagueService.updateLeague(id, league);
         if (updatedLeague != null) {
             return new ResponseEntity<>(updatedLeague, HttpStatus.ACCEPTED);
@@ -44,7 +44,7 @@ public class LeagueController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<League> deleteLeague(@PathVariable int id) {
+    public ResponseEntity<League> deleteLeague(@PathVariable String id) {
         League deletedLeague = leagueService.deleteLeague(id);
         if (deletedLeague != null) {
             return new ResponseEntity<>(deletedLeague, HttpStatus.ACCEPTED);

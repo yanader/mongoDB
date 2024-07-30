@@ -32,7 +32,7 @@ public class LeagueServiceImpl implements LeagueService{
     }
 
     @Override
-    public League deleteLeague(int id) {
+    public League deleteLeague(String id) {
         Optional<League> league = leagueRepository.findById(id);
         if(league.isPresent()) {
             leagueRepository.deleteById(id);
@@ -43,7 +43,7 @@ public class LeagueServiceImpl implements LeagueService{
     }
 
     @Override
-    public League updateLeague(int id, League updates) {
+    public League updateLeague(String id, League updates) {
         Optional<League> optionalLeague = leagueRepository.findById(id);
         if(optionalLeague.isEmpty()) {
             return null;

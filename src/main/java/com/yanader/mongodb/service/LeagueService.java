@@ -8,6 +8,6 @@ public interface LeagueService {
     League getLeagueByName(String leagueName);
     List<League> getLeagues();
     League addLeague(League league);
-    League deleteLeague(int id);
-    League updateLeague(int id, League league);
+    League deleteLeague(String id);
+    League updateLeague(String id, League league);
 }
