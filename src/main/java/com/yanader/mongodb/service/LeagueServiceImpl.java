@@ -1,6 +1,8 @@
 package com.yanader.mongodb.service;
 
 import com.yanader.mongodb.model.League;
+import com.yanader.mongodb.model.User;
+import com.yanader.mongodb.model.dto.NewLeagueDTO;
 import com.yanader.mongodb.repository.LeagueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,9 +28,9 @@ public class LeagueServiceImpl implements LeagueService{
     }
 
     @Override
-    public League addLeague(League league) {
-        if(!validLeague(league)) return null;
-        return leagueRepository.save(league);
+    public League addLeague(NewLeagueDTO newLeague) {
+        if(!validLeague(newLeague)) return null;
+        return leagueRepository.save(new League(newLeague.getLeagueName(), newLeague.getOwnerId()));
     }
 
     @Override
@@ -54,11 +56,14 @@ public class LeagueServiceImpl implements LeagueService{
         return leagueToUpdate;
     }
 
-    private boolean validLeague(League league) {
-        return league.getLeagueName() != null;
+    private boolean validLeague(NewLeagueDTO newLeague) {
+        if (newLeague.getLeagueName() == null) return false;
+        if (newLeague.getOwnerId() == null) return false;
+        return true;
     }
 
     private void applyLeagueUpdates(League leagueToUpdate, League updates) {
-
+        // Did i never write this? It just needs a line to change the league name
+        // Might go and exist in "leagueAdmin"
     }
 }

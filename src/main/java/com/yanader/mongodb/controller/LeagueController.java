@@ -1,6 +1,7 @@
 package com.yanader.mongodb.controller;
 
 import com.yanader.mongodb.model.League;
+import com.yanader.mongodb.model.dto.NewLeagueDTO;
 import com.yanader.mongodb.service.LeagueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,8 @@ public class LeagueController {
     }
 
     @PostMapping
-    public ResponseEntity<League> addLeague(@RequestBody League league) {
-        League addedLeague = leagueService.addLeague(league);
+    public ResponseEntity<League> addLeague(@RequestBody NewLeagueDTO newLeague) {
+        League addedLeague = leagueService.addLeague(newLeague);
         if (addedLeague != null) {
             return new ResponseEntity<>(addedLeague, HttpStatus.OK);
         } else {

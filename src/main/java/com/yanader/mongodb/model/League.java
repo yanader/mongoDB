@@ -1,7 +1,7 @@
 package com.yanader.mongodb.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -18,10 +18,12 @@ public class League {
     @Id
     private String _id;
     private String leagueName;
-    private List<Integer> leagueMembers;
+    private Map<String, Boolean> leagueMembers;
 
-    public League(String leagueName) {
+    public League(String leagueName, String ownerId) {
         this.leagueName = leagueName;
-        leagueMembers = new ArrayList<>();
+        leagueMembers = new HashMap<>();
+        leagueMembers.put(ownerId, true);
     }
+
 }

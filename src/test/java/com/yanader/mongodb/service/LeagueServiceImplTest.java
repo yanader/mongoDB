@@ -30,8 +30,8 @@ class LeagueServiceImplTest {
 
     @BeforeEach
     void setup() {
-        leagueOne = new League("Test League One");
-        leagueTwo = new League("Test League Two");
+        leagueOne = new League("Test League One", null);
+        leagueTwo = new League("Test League Two", null);
         leagueList = new ArrayList<>();
         leagueList.add(leagueOne);
         leagueList.add(leagueTwo);

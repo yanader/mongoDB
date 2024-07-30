@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,16 +16,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
 
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String _id;
     private String username;
     private String email;
-    private List<Integer> leagueMemberships;
+    private Map<String, Boolean> leagueMemberships;
 
     public User(String username, String email) {
         this.username = username;
         this.email = email;
-        leagueMemberships = new ArrayList<>();
+        leagueMemberships = new HashMap<>();
     }
 
 }
