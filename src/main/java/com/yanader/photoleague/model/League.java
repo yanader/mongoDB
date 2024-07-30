@@ -1,4 +1,4 @@
-package com.yanader.mongodb.model;
+package com.yanader.photoleague.model;
 
 import java.util.HashMap;
 import java.util.Map;

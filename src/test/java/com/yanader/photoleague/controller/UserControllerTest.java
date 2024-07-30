@@ -1,10 +1,10 @@
-package com.yanader.mongodb.controller;
+package com.yanader.photoleague.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.yanader.mongodb.model.User;
-import com.yanader.mongodb.service.UserServiceImpl;
+import com.yanader.photoleague.model.User;
+import com.yanader.photoleague.service.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

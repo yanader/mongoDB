@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.yanader</groupId>
-	<artifactId>mongodb</artifactId>
+	<artifactId>photoleague</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mongodb</name>
 	<description>Demo MongoDB project with Spring</description>

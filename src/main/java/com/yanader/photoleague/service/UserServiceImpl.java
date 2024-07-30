@@ -1,7 +1,7 @@
-package com.yanader.mongodb.service;
+package com.yanader.photoleague.service;
 
-import com.yanader.mongodb.model.User;
-import com.yanader.mongodb.repository.UserRepository;
+import com.yanader.photoleague.model.User;
+import com.yanader.photoleague.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

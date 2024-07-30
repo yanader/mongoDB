@@ -1,8 +1,8 @@
-package com.yanader.mongodb.controller;
+package com.yanader.photoleague.controller;
 
-import com.yanader.mongodb.model.League;
-import com.yanader.mongodb.model.dto.NewLeagueDTO;
-import com.yanader.mongodb.service.LeagueService;
+import com.yanader.photoleague.model.League;
+import com.yanader.photoleague.model.dto.NewLeagueDTO;
+import com.yanader.photoleague.service.LeagueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

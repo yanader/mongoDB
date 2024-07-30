@@ -1,8 +1,7 @@
-package com.yanader.mongodb.service;
+package com.yanader.photoleague.service;
 
-import com.yanader.mongodb.model.User;
-import com.yanader.mongodb.repository.UserRepository;
-import org.bson.types.ObjectId;
+import com.yanader.photoleague.model.User;
+import com.yanader.photoleague.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,7 +11,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)

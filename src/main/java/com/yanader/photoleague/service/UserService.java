@@ -1,6 +1,6 @@
-package com.yanader.mongodb.service;
+package com.yanader.photoleague.service;
 
-import com.yanader.mongodb.model.User;
+import com.yanader.photoleague.model.User;
 
 import java.util.List;
 

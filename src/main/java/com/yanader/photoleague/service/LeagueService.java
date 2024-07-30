@@ -1,7 +1,7 @@
-package com.yanader.mongodb.service;
+package com.yanader.photoleague.service;
 
-import com.yanader.mongodb.model.League;
-import com.yanader.mongodb.model.dto.NewLeagueDTO;
+import com.yanader.photoleague.model.League;
+import com.yanader.photoleague.model.dto.NewLeagueDTO;
 
 import java.util.List;
 

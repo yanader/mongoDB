@@ -1,4 +1,4 @@
-package com.yanader.mongodb.model;
+package com.yanader.photoleague.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

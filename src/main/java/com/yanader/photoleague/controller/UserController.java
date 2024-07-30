@@ -1,7 +1,7 @@
-package com.yanader.mongodb.controller;
+package com.yanader.photoleague.controller;
 
-import com.yanader.mongodb.model.User;
-import com.yanader.mongodb.service.UserService;
+import com.yanader.photoleague.model.User;
+import com.yanader.photoleague.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

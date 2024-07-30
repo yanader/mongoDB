@@ -1,4 +1,4 @@
-package com.yanader.mongodb;
+package com.yanader.photoleague;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,5 @@
-package com.yanader.mongodb.model.dto;
+package com.yanader.photoleague.model.dto;
 
-import com.yanader.mongodb.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
